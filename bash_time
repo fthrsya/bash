@@ -1,0 +1,13 @@
+#!/bin/bash
+
+start_time=$(date +%s)
+
+echo "website yolu /var/www/vhosts/orgumburada.com/httpdocs sıkıştırılıyor"
+
+zip -9 -r -q $(date +'%Y_%m_%d_%H_%M_%S')_website.zip /var/www/vhosts/orgumburada.com/httpdocs
+
+end_time=$(date +%s)
+
+elapsed_time=$((end_time - start_time))
+
+echo "Geçen Süre: $elapsed_time saniye"
